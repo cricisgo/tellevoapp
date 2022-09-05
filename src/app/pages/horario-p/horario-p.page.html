@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Horario Pasajero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <ion-list-header>
+      <ion-label color="secondary" >¿A que hora sales? </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Lunes: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="lunes" [(ngModel)]= "horariop.lunes" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Martes: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="martes" [(ngModel)]= "horariop.martes" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Miercoles: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="miercoles" [(ngModel)]= "horariop.miercoles" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Jueves: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="jueves" [(ngModel)]= "horariop.jueves" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Viernes: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="viernes" [(ngModel)]= "horariop.viernes" required>
+      </ion-input>
+    </ion-item>
+
+
+    <ion-button [disabled] ="formulario.invalid"
+            type="submit" expand="block" routerLink="/perfilp">
+      Continuar
+    </ion-button>
+
+  </form>
+
+</ion-content>

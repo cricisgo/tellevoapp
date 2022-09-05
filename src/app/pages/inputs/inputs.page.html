@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Conductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <ion-list-header>
+      <ion-label color="secondary">Formulario Conductor</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Nombre y Apellido: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="nombre y Apellido" [(ngModel)]= "Conductor.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" placeholder="Email"
+                 name="email" value="" [(ngModel)]= "Conductor.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                 name="password" value="" [(ngModel)]= "Conductor.password"
+                 required>
+      </ion-input>
+    </ion-item>
+     
+    <ion-item>
+      <ion-label>Escuela: </ion-label>
+      <ion-input type="text" placeholder="Informatica"
+                 name="Escuela" [(ngModel)]= "Conductor.Escuela" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Carrera: </ion-label>
+      <ion-input type="text" placeholder=""
+                 name="carrera" [(ngModel)]= "Conductor.Carrera" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Telefono : </ion-label>
+      <ion-input type="number" value="333" placeholder="ingrese su telefono"
+                 name="telefono" [(ngModel)]= "Conductor.telefono" required>
+      </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Patenente: </ion-label>
+      <ion-input type="text" placeholder="xx-xx-xx"
+                 name="patente" [(ngModel)]= "Conductor.patente" required>                      
+      </ion-input>
+      
+    </ion-item>
+
+<ion-item>
+      <ion-label>Capacidad: </ion-label>
+      <ion-input type="number" value="1" placeholder=""
+                 name="capacidad" [(ngModel)]= "Conductor.Capacidad" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button [disabled] ="formulario.invalid"
+            type="submit" expand="block" routerLink="/horario-c">
+      Continuar
+    </ion-button>
+
+  </form>
+</ion-content>
