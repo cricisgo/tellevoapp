@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
-
+import { MenuController} from '@ionic/angular';
 
 @Component({
-  selector: 'app-inputs',
-  templateUrl: './inputs.page.html',
-  styleUrls: ['./inputs.page.scss'],
+  selector: 'app-conductor',
+  templateUrl: './conductor.page.html',
+  styleUrls: ['./conductor.page.scss'],
 })
-export class InputsPage implements OnInit {
+export class ConductorPage implements OnInit {
 
   constructor(private menuController: MenuController) { }
 
   ngOnInit() {
   }
-
+ 
   mostrarMenu(){
     this.menuController.open('first');
   }
@@ -33,4 +32,5 @@ export class InputsPage implements OnInit {
     console.log('submit');
     console.log(this.Conductor);
   }
+
 }

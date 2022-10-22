@@ -2,39 +2,32 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  
   {
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
   },
+
   {
-    path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+ 
   {
-    path: 'alert',
-    loadChildren: () => import('./pages/alert/alert.module').then( m => m.AlertPageModule)
-  },
-  {
-    path: 'action-sheet',
-    loadChildren: () => import('./pages/action-sheet/action-sheet.module').then( m => m.ActionSheetPageModule)
-  },
-  {
-    path: 'card',
-    loadChildren: () => import('./pages/card/card.module').then( m => m.CardPageModule)
-  },
-  {
-    path: 'inputs',
-    loadChildren: () => import('./pages/inputs/inputs.module').then( m => m.InputsPageModule)
+    path: 'conductor',
+    loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
   },
   {
     path: 'pasajero',
     loadChildren: () => import('./pages/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
   },
   {
-    path: 'horario-c',
-    loadChildren: () => import('./pages/horario-c/horario-c.module').then( m => m.HorarioCPageModule)
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'horarioc',
+    loadChildren: () => import('./pages/horarioc/horarioc.module').then( m => m.HorariocPageModule)
   },
   {
     path: 'horario-p',
@@ -46,9 +39,8 @@ const routes: Routes = [
   },
   {
     path: 'perfilp',
-    loadChildren: () => import('./perfilp/perfilp.module').then( m => m.PerfilpPageModule)
+    loadChildren: () => import('./pages/perfilp/perfilp.module').then( m => m.PerfilpPageModule)
   },
-
 ];
 
 @NgModule({

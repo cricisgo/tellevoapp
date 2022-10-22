@@ -8,7 +8,6 @@ import { MenuController } from '@ionic/angular';
 })
 export class HorarioPPage implements OnInit {
 
-
   constructor(private menuController: MenuController) { }
 
   ngOnInit() {
@@ -31,5 +30,5 @@ export class HorarioPPage implements OnInit {
     console.log('submit');
     console.log(this.horariop);
   }
-}
 
+}

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HorarioCPage } from './horario-c.page';
+import { HorariocPage } from './horarioc.page';
 
-describe('HorarioCPage', () => {
-  let component: HorarioCPage;
-  let fixture: ComponentFixture<HorarioCPage>;
+describe('HorariocPage', () => {
+  let component: HorariocPage;
+  let fixture: ComponentFixture<HorariocPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HorarioCPage ],
+      declarations: [ HorariocPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HorarioCPage);
+    fixture = TestBed.createComponent(HorariocPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

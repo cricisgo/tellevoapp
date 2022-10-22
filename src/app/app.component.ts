@@ -11,9 +11,9 @@ interface Componente{
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+
 export class AppComponent {
   constructor() {}
-
 
   componentes : Componente[] = [
     {
@@ -30,8 +30,6 @@ export class AppComponent {
     },     
     
   ]
-  
-
-
 
 }
+

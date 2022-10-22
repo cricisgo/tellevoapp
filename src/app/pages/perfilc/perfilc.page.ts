@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+
+
 @Component({
   selector: 'app-perfilc',
   templateUrl: './perfilc.page.html',
@@ -7,7 +9,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class PerfilcPage implements OnInit {
 
-  constructor(private menuController: MenuController){ }
+  constructor(private menuController: MenuController) { }
 
   perfilc = {
     pasajero:''
@@ -25,5 +27,4 @@ onSubmit(){
   console.log('submit');
   console.log(this.perfilc);
 }
-
 }

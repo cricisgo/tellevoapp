@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-horario-c',
-  templateUrl: './horario-c.page.html',
-  styleUrls: ['./horario-c.page.scss'],
+  selector: 'app-horarioc',
+  templateUrl: './horarioc.page.html',
+  styleUrls: ['./horarioc.page.scss'],
 })
-export class HorarioCPage implements OnInit {
+export class HorariocPage implements OnInit {
 
   constructor(private menuController: MenuController) { }
 
@@ -31,3 +31,5 @@ export class HorarioCPage implements OnInit {
     console.log(this.horarioc);
   }
 }
+  
+
