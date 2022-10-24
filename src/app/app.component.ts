@@ -20,15 +20,15 @@ export class AppComponent {
       
       icon: 'car-sport-outline',
       name: 'Inicio',
-      redirecTo: '/inicio'
+      redirecTo: '#'
     },
     
-    {
-      icon: 'person-circle-outline',
-      name: 'Perfil',
-      redirecTo: '/perfilc'
-    },     
     
+    {
+      icon: 'return-down-back-outline',
+      name: 'Salir',
+      redirecTo: '/login'
+    },     
   ]
 
 }

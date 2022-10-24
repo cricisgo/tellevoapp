@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title><center>Login</center></ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card color="dark" fill="clear">
+    <img src="assets/alumnos.jfif"/>
+  </ion-card>
+
+  <ion-card color="light">
+    
+    <ion-card-header>
+      <ion-card-title>Ingresa a tu cuenta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <form [formGroup]="formularioLogin">
+
+          <ion-item color="light">
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input type="email" formControlName="correo"></ion-input>
+          </ion-item>
+
+          <ion-item color="light">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </form>
+        <br>
+        <ion-button (click)="Ingresar()" color="success" expand="block" fill="solid" shape="round">
+          Ingresar
+        </ion-button>
+<br>
+        <ion-button [routerLink] = "['/registro']" color="warning" expand="block" fill="solid" shape="round">
+          Registrate
+        </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <center>
+  <img class="footer" src="assets/duoc_logo.png"/>
+</center>
+
+</ion-content>

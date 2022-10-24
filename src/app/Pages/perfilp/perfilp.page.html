@@ -1,49 +1,110 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="mostrarMenu()" color="primary">
-        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title color="primary">Perfil Pasajero</ion-title>
+  <ion-toolbar color="light" >
+    <ion-title> <center> TeLlevo App </center>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-item href="#">
-    <ion-icon slot="start" name="person-circle-outline" color="secondary" style="zoom:2.0;"></ion-icon>
-    <ion-label class="iperfil" color="secondary">Pasajero</ion-label>
+  <ion-toolbar color="light" >
+  <ion-segment value="all">
+    <ion-segment-button value="viajar">
+      Viajar
+    </ion-segment-button>
+    <ion-segment-button value="viajes">
+      Mis viajes
+    </ion-segment-button>
+    <ion-segment-button value="conductores">
+      Conductores
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+  <ion-item color="light">
+    
+       <ion-icon name="person-circle-outline" color="dark" style="zoom:2.2;"></ion-icon>
+    <ion-text color="dark">
+      <h1>¡Bienvenido, {{mostrarNombre()}}!</h1>
+    </ion-text>
+    
   </ion-item>
+
   <br>
+
+  <ion-card color="light">
+    <img src="assets/mapa.png"/>
+  </ion-card>
+
+<ion-card color="dark">
+  <ion-card-header>
+    <ion-card-title>Conductor 1</ion-card-title>
+    <ion-card-subtitle>Viajaron el 24-10-2022</ion-card-subtitle>
+  </ion-card-header>
+<ion-card-content position="center">
+  <ion-icon  name="business" color="light" style="zoom:2.5;"></ion-icon>
+  <ion-icon  name="arrow-forward-circle" color="light" style="zoom:2.5;"></ion-icon>
+  <ion-icon  name="home" color="light" style="zoom:2.5;"></ion-icon>
+</ion-card-content>
+
+  <ion-button color="light" fill="clear" expand="block">Volver a viajar</ion-button>
+</ion-card>
+
+<ion-card color="dark">
+  <ion-card-header>
+    <ion-card-title>Conductor 2</ion-card-title>
+    <ion-card-subtitle>Viajaron el 24-10-2022</ion-card-subtitle>
+  </ion-card-header>
+<ion-card-content position="center">
+  <ion-icon  name="business" color="light" style="zoom:2.5;"></ion-icon>
+  <ion-icon  name="arrow-forward-circle" color="light" style="zoom:2.5;"></ion-icon>
+  <ion-icon  name="home" color="light" style="zoom:2.5;"></ion-icon>
+  <ion-icon  name="arrow-forward-circle" color="light" style="zoom:2.5;"></ion-icon>
+  <ion-icon  name="home" color="light" style="zoom:2.5;"></ion-icon>
+</ion-card-content>
+
+  <ion-button color="light" fill="clear" expand="block">Volver a viajar</ion-button>
+</ion-card>
+
+<ion-card color="dark">
   
-
-
-  <ion-button color="secondary">Viajar</ion-button>
-  <ion-button color="secondary">Viajes</ion-button>
-  <ion-button color="secondary">Conductor</ion-button>
+  <ion-button [routerLink] = "['/feriados']" color="light" expand="block" fill="clear" >
+    Revisa los feriados de este año
+  </ion-button>
+  </ion-card>
 
 <br>
+<br>
+<br>
+<br>
 
-<icon-card>
-  <img src="assets/uberduoc.jpg" class="ion-padding">
-</icon-card>
-  <br>
-  <ion-item>
-  <ion-label position="stacked">Conductor 1</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="stacked">Conductor 2</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="stacked">Conductor 3</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="stacked">Conductor 4</ion-label>
-  <ion-input></ion-input>
-</ion-item>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="cerrarSesion()"  color="danger">
+    <ion-icon name="power"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button color="light">
+    <ion-icon name="car-sport"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="start" slot="fixed">
+
+  <ion-fab-button color="dark">
+    <ion-icon name="share">
+    </ion-icon>
+  </ion-fab-button> 
+
+  <ion-fab-list side="top">
+    <ion-fab-button><ion-icon name="link"></ion-icon></ion-fab-button>
+    <ion-fab-button><ion-icon name="logo-whatsapp"></ion-icon></ion-fab-button>
+    <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+
+</ion-fab>
+  
 
 </ion-content>

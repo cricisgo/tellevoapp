@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
+import { StorageService , Usuario } from '../services/storage.service'
 
 @Component({
   selector: 'app-perfilp',
@@ -8,7 +9,14 @@ import { MenuController } from '@ionic/angular';
 })
 export class PerfilpPage implements OnInit {
 
-  constructor(private menuController: MenuController) { }
+
+  nombreUsuario = localStorage.getItem("nombre");
+
+  constructor(private menuController: MenuController,
+    private navController: NavController,
+    private registroService: StorageService, ) { }
+
+  usuarios : Usuario[] = [];
 
   perfilp = {
     conductor:''
@@ -17,9 +25,19 @@ export class PerfilpPage implements OnInit {
   ngOnInit() {
   }
 
+
   mostrarMenu(){
     this.menuController.open('first');
 
+}
+
+mostrarNombre(){
+  return this.nombreUsuario;
+}
+
+cerrarSesion(){
+  localStorage.removeItem('ingresado');
+  this.navController.navigateRoot('login');
 }
 
 onSubmit(){

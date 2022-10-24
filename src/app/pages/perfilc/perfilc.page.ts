@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 
 @Component({
@@ -9,13 +9,26 @@ import { MenuController } from '@ionic/angular';
 })
 export class PerfilcPage implements OnInit {
 
-  constructor(private menuController: MenuController) { }
+  nombreUsuario = localStorage.getItem("nombre");
+
+  constructor(private menuController: MenuController,
+              private navController: NavController) { }
 
   perfilc = {
     pasajero:''
   }
 
   ngOnInit() {
+    
+  }
+
+  mostrarNombre(){
+    return this.nombreUsuario;
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem('ingresado');
+    this.navController.navigateRoot('login');
   }
 
   mostrarMenu(){

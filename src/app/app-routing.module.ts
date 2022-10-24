@@ -1,45 +1,56 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoGuard } from './ingresado.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
 
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [IngresadoGuard]
   },
- 
-  {
-    path: 'conductor',
-    loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
-  },
-  {
-    path: 'pasajero',
-    loadChildren: () => import('./pages/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
-  },
-  {
-    path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
-  },
-  {
-    path: 'horarioc',
-    loadChildren: () => import('./pages/horarioc/horarioc.module').then( m => m.HorariocPageModule)
-  },
-  {
-    path: 'horario-p',
-    loadChildren: () => import('./pages/horario-p/horario-p.module').then( m => m.HorarioPPageModule)
-  },
+
   {
     path: 'perfilc',
-    loadChildren: () => import('./pages/perfilc/perfilc.module').then( m => m.PerfilcPageModule)
+    loadChildren: () => import('./pages/perfilc/perfilc.module').then( m => m.PerfilcPageModule),
+    canActivate: [IngresadoGuard]
+    
+    
   },
   {
     path: 'perfilp',
-    loadChildren: () => import('./pages/perfilp/perfilp.module').then( m => m.PerfilpPageModule)
+    loadChildren: () => import('./pages/perfilp/perfilp.module').then( m => m.PerfilpPageModule),
+    canActivate: [IngresadoGuard]
+
+    
+  },
+  {
+    path: 'feriados',
+    loadChildren: () => import('./Pages/feriados/feriados.module').then( m => m.FeriadosPageModule),
+    canActivate: [IngresadoGuard]
+    
+    
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard]
+    
+    
+    
+  },
+    {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate: [NoIngresadoGuard]
+    
   },
 ];
 
