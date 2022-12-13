@@ -29,42 +29,29 @@
     </ion-text>
     
   </ion-item>
+  
 
-  <br>
+  <div id="map"></div>
 
-  <ion-card color="light">
-    <img src="assets/mapa.png"/>
-  </ion-card>
-
-<ion-card color="dark">
-  <ion-card-header>
-    <ion-card-title>Pasajero 1</ion-card-title>
-    <ion-card-subtitle>Viajaron el 24-10-2022</ion-card-subtitle>
-  </ion-card-header>
-<ion-card-content position="center">
-  <ion-icon  name="business" color="light" style="zoom:2.5;"></ion-icon>
-  <ion-icon  name="arrow-forward-circle" color="light" style="zoom:2.5;"></ion-icon>
-  <ion-icon  name="home" color="light" style="zoom:2.5;"></ion-icon>
-</ion-card-content>
-
-  <ion-button color="light" fill="clear" expand="block">Volver a viajar</ion-button>
-</ion-card>
-
-<ion-card color="dark">
-  <ion-card-header>
-    <ion-card-title>Pasajero 2</ion-card-title>
-    <ion-card-subtitle>Viajaron el 24-10-2022</ion-card-subtitle>
-  </ion-card-header>
-<ion-card-content position="center">
-  <ion-icon  name="business" color="light" style="zoom:2.5;"></ion-icon>
-  <ion-icon  name="arrow-forward-circle" color="light" style="zoom:2.5;"></ion-icon>
-  <ion-icon  name="home" color="light" style="zoom:2.5;"></ion-icon>
-  <ion-icon  name="arrow-forward-circle" color="light" style="zoom:2.5;"></ion-icon>
-  <ion-icon  name="home" color="light" style="zoom:2.5;"></ion-icon>
-</ion-card-content>
-
-  <ion-button color="light" fill="clear" expand="block">Volver a viajar</ion-button>
-</ion-card>
+ 
+  <div *ngFor="let disponible of disponibles; let i=index"  >
+       <ion-card color="dark" >
+        <ion-card-header>
+          <ion-card-title>Pasajero: {{ disponible.nomUsuario }}
+          </ion-card-title>
+          <ion-card-subtitle></ion-card-subtitle>
+        </ion-card-header>
+      <ion-card-content position="center">
+        <img src="assets/mapa.png"/>
+        <br>
+        <h1><center><b>{{ disponible.dirUsuario }}</b></center></h1>
+        
+      </ion-card-content>
+        <ion-button [routerLink] = "['/viaje']" (click)="crearViaje(usuario.nomUsuario,usuario.dirUsuario)" color="primary" expand="block">Viajar</ion-button>
+      </ion-card>
+    </div>
+  
+<br>
 
 <ion-card color="dark">
   
@@ -86,7 +73,7 @@
 </ion-fab>
 
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-  <ion-fab-button color="light">
+  <ion-fab-button (click)="loadDisponibles()" color="light">
     <ion-icon name="car-sport"></ion-icon>
   </ion-fab-button>
 </ion-fab>

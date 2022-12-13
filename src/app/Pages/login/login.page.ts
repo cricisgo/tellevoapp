@@ -30,6 +30,8 @@ export class LoginPage implements OnInit {
               }
 
   ngOnInit() {
+    let fecha = new Date();
+    console.log(fecha);
   }
 
   async Ingresar(){
@@ -45,6 +47,15 @@ export class LoginPage implements OnInit {
           a=1;
           console.log('Ingresado');
           localStorage.setItem('nombre', obj.nomUsuario)
+          localStorage.setItem('direccion', obj.dirUsuario)
+          
+          localStorage.setItem('lunes', obj.lu)
+          localStorage.setItem('martes', obj.ma)
+          localStorage.setItem('miercoles', obj.mi)
+          localStorage.setItem('jueves', obj.ju)
+          localStorage.setItem('viernes', obj.vi)
+          localStorage.setItem('sabado', obj.sa)
+
           localStorage.setItem('ingresado','true');
             if (obj.rolUsuario == "conductor"){
             localStorage.setItem('rol', obj.rolUsuario)

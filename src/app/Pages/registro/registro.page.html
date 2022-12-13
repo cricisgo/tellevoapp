@@ -18,7 +18,7 @@
 
         <ion-item color="light">
           <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text" placeholder="Cristián Cisternas" formControlName="nombre"></ion-input>
+          <ion-input type="text" placeholder="Pepito Perez" formControlName="nombre"></ion-input>
         </ion-item>
 
         <ion-item color="light">
@@ -27,21 +27,93 @@
         </ion-item>
 
         <ion-item color="light">
+          <ion-label position="floating">Direccion</ion-label>
+          <ion-input type="text" placeholder="Avenida Pajaritos 123" formControlName="direccion"></ion-input>
+        </ion-item>
+
+        <ion-item color="light">
           <ion-label position="floating">Contraseña</ion-label>
           <ion-input type="password"  formControlName="password"></ion-input>
           <ion-note slot="error">Mínimo 6 caracteres (Debe contener una mayúscula, una minúsucula y un número)</ion-note>
         </ion-item>
 
-        <ion-item color="light">
-          <ion-label position="floating">Confirma Contraseña</ion-label>
-          <ion-input type="password" formControlName="confirmaPass"></ion-input>
-          
-        </ion-item>
+        
         <ion-item color="light">
           <ion-label position="floating">¿Cómo vas a viajar?</ion-label>
           <ion-select interface="action-sheet" placeholder="Escoje tu rol" formControlName="rol">
             <ion-select-option value="conductor">Conductor</ion-select-option>
             <ion-select-option value="pasajero">Pasajero</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+
+        <ion-card-header>
+          <ion-card-title >Rellena tu horario:</ion-card-title>
+        </ion-card-header>
+
+        <ion-item color="light">
+          <ion-label position="floating">Lunes:</ion-label>
+          <ion-select interface="action-sheet" formControlName="lunes">
+            <ion-select-option value="2020">20:20</ion-select-option>
+            <ion-select-option value="2100">21:00</ion-select-option>
+            <ion-select-option value="2140">21:40</ion-select-option>
+            <ion-select-option value="2220">22:20</ion-select-option>
+            <ion-select-option value="2300">23:00</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="light">
+          <ion-label position="floating">Martes:</ion-label>
+          <ion-select interface="action-sheet" formControlName="martes">
+            <ion-select-option value="2020">20:20</ion-select-option>
+            <ion-select-option value="2100">21:00</ion-select-option>
+            <ion-select-option value="2140">21:40</ion-select-option>
+            <ion-select-option value="2220">22:20</ion-select-option>
+            <ion-select-option value="2300">23:00</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="light">
+          <ion-label position="floating">Miercoles:</ion-label>
+          <ion-select interface="action-sheet" formControlName="miercoles">
+            <ion-select-option value="2020">20:20</ion-select-option>
+            <ion-select-option value="2100">21:00</ion-select-option>
+            <ion-select-option value="2140">21:40</ion-select-option>
+            <ion-select-option value="2220">22:20</ion-select-option>
+            <ion-select-option value="2300">23:00</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="light">
+          <ion-label position="floating">Jueves:</ion-label>
+          <ion-select interface="action-sheet" formControlName="jueves">
+            <ion-select-option value="2020">20:20</ion-select-option>
+            <ion-select-option value="2100">21:00</ion-select-option>
+            <ion-select-option value="2140">21:40</ion-select-option>
+            <ion-select-option value="2220">22:20</ion-select-option>
+            <ion-select-option value="2300">23:00</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="light">
+          <ion-label position="floating">Viernes:</ion-label>
+          <ion-select interface="action-sheet" formControlName="viernes">
+            <ion-select-option value="2020">20:20</ion-select-option>
+            <ion-select-option value="2100">21:00</ion-select-option>
+            <ion-select-option value="2140">21:40</ion-select-option>
+            <ion-select-option value="2220">22:20</ion-select-option>
+            <ion-select-option value="2300">23:00</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="light">
+          <ion-label position="floating">Sabado:</ion-label>
+          <ion-select interface="action-sheet" formControlName="sabado">
+            <ion-select-option value="1000">10:00</ion-select-option>
+            <ion-select-option value="1040">10:40</ion-select-option>
+            <ion-select-option value="1120">11:20</ion-select-option>
+            <ion-select-option value="1200">12:00</ion-select-option>
+            <ion-select-option value="1240">12:40</ion-select-option>
           </ion-select>
         </ion-item>
 

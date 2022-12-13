@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService , Usuario } from '../services/storage.service'
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController, ToastController, AlertController } from '@ionic/angular';
 import {
   FormGroup, FormControl, Validators, FormBuilder
 } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -32,14 +31,14 @@ export class RegistroPage implements OnInit {
                     Validators.maxLength(20),
                     Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
                   ])), 
-                  'confirmaPass': new FormControl("", Validators.compose([
-                    Validators.required,
-                    Validators.minLength(6),
-                    Validators.maxLength(30),
-                    Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
-                  ])),
+                  'direccion': new FormControl("", Validators.required),
                   'rol': new FormControl("", Validators.required),
-
+                  'lunes': new FormControl("", Validators.required),
+                  'martes': new FormControl("", Validators.required),
+                  'miercoles': new FormControl("", Validators.required),
+                  'jueves': new FormControl("", Validators.required),
+                  'viernes': new FormControl("", Validators.required),
+                  'sabado': new FormControl("", Validators.required),
                 })
                }
 
@@ -58,8 +57,15 @@ export class RegistroPage implements OnInit {
     this.newUsuario.nomUsuario = form.nombre;
     this.newUsuario.correoUsuario = form.correo;
     this.newUsuario.passUsuario = form.password;
-    this.newUsuario.repassUsuario = form.confirmaPass;
     this.newUsuario.rolUsuario = form.rol;
+    this.newUsuario.dirUsuario = form.direccion;
+    this.newUsuario.disponible = false;
+    this.newUsuario.lu = form.lunes;
+    this.newUsuario.ma = form.martes;
+    this.newUsuario.mi = form.miercoles;
+    this.newUsuario.ju = form.jueves;
+    this.newUsuario.vi = form.viernes;
+    this.newUsuario.sa = form.sabado;
 
     this.registroService.getUsuarios().then(datos=>{ 
     this.usuarios = datos; 
@@ -84,12 +90,15 @@ export class RegistroPage implements OnInit {
         this.formularioRegistro.reset();
       }
       else{
+        
         this.registroService.addUsuario(this.newUsuario).then(dato=>{ 
           this.newUsuario=<Usuario>{};
           this.showToast('Usuario Creado satisfactoriamente');
         });
+
         this.formularioRegistro.reset();
         this.navController.navigateRoot('login');
+
       }
     }
     })  
@@ -115,6 +124,7 @@ export class RegistroPage implements OnInit {
     })
     await alert.present();
   }
+
 
   async alertPass(){
     const alert = await this.alertController.create({ 

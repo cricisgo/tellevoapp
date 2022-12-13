@@ -52,6 +52,10 @@ const routes: Routes = [
     canActivate: [NoIngresadoGuard]
     
   },
+  {
+    path: 'viaje',
+    loadChildren: () => import('./Pages/viaje/viaje.module').then( m => m.ViajePageModule)
+  },
 ];
 
 @NgModule({
